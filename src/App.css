@@ -1,0 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+a.active {
+  text-decoration: none;
+  font-weight: 500;
+}

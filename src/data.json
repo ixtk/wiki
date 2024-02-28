@@ -1,0 +1,26 @@
+[
+  {
+    "title": "CSS",
+    "content": "CSS is a language that can be used to add style to an HTML page."
+  },
+  {
+    "title": "Django",
+    "content": "Django is a web framework written using Python that allows for the design of web applications that generate HTML dynamically."
+  },
+  {
+    "title": "Git",
+    "content": "Git is a version control tool that can be used to keep track of versions of a software project."
+  },
+  {
+    "title": "GitHub",
+    "content": "GitHub is an online service for hosting git repositories."
+  },
+  {
+    "title": "HTML",
+    "content": "HTML is a markup language that can be used to define the structure of a web page. HTML elements include headings, paragraphs, lists, links, and more! The most recent major version of HTML is HTML5."
+  },
+  {
+    "title": "Python",
+    "content": "Python is a programming language that can be used both for writing command-line scripts or building web applications."
+  }
+]
