@@ -14,7 +14,7 @@ function App() {
       <Routes>
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
-          <Route path=":topicId" element={<Topic />} />
+          <Route path="/entries/:topicId" element={<Topic />} />
           <Route path="search" element={<SearchResults />} />
           <Route path="new" element={<NewTopic />} />
           <Route path="*" element={<NotFound />} />

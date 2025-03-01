@@ -1,23 +1,39 @@
-import { Outlet } from "react-router"
+import { useState } from "react"
+import { NavLink, Outlet, useNavigate } from "react-router"
 
 export const RootLayout = () => {
+  const [query, setQuery] = useState("")
+  const navigate = useNavigate()
+
+  const searchEntry = (event) => {
+    event.preventDefault()
+    setQuery("")
+    navigate(`/search?q=${query}`)
+  }
+
   return (
     <div className="container">
       <aside>
         <h1>Wiki 📔</h1>
-        <form role="search">
-          <input name="search" type="search" placeholder="Search" />
+        <form onSubmit={searchEntry} role="search">
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            name="search"
+            type="search"
+            placeholder="Search"
+          />
         </form>
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <NavLink to="/">Home</NavLink>
             </li>
             <li>
-              <a href="#">Create new</a>
+              <NavLink to="/new">Create new</NavLink>
             </li>
             <li>
-              <a href="#">Bookmarks</a>
+              <NavLink to="/bookmarks">Bookmarks</NavLink>
             </li>
           </ul>
         </nav>
