@@ -4,3 +4,14 @@
   --pico-form-element-spacing-vertical: 5px;
   --pico-form-element-spacing-horizontal: 15px;
 }
+
+.container {
+  display: flex;
+  gap: 32px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  max-width: 300px;
+}

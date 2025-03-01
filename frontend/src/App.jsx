@@ -6,16 +6,19 @@ import { NotFound } from "./pages/NotFound"
 import { SearchResults } from "./pages/SearchResults"
 import { Topic } from "./pages/Topic"
 import "./App.css"
+import { RootLayout } from "./pages/RootLayout"
 
 function App() {
   return (
     <>
-      <Routes path="/">
-        <Route index element={<Home />} />
-        <Route path=":topicId" element={<Topic />} />
-        <Route path="search" element={<SearchResults />} />
-        <Route path="new" element={<NewTopic />} />
-        <Route path="*" element={<NotFound />} />
+      <Routes>
+        <Route element={<RootLayout />}>
+          <Route index element={<Home />} />
+          <Route path=":topicId" element={<Topic />} />
+          <Route path="search" element={<SearchResults />} />
+          <Route path="new" element={<NewTopic />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
       </Routes>
     </>
   )
