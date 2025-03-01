@@ -1,1 +1,6 @@
 @import url(https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css);
+
+:root {
+  --pico-form-element-spacing-vertical: 5px;
+  --pico-form-element-spacing-horizontal: 15px;
+}
