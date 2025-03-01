@@ -7,6 +7,7 @@ import { SearchResults } from "./pages/SearchResults"
 import { Topic } from "./pages/Topic"
 import "./App.css"
 import { RootLayout } from "./pages/RootLayout"
+import { Bookmarks } from "./pages/Bookmarks"
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/entries/:topicId" element={<Topic />} />
           <Route path="search" element={<SearchResults />} />
+          <Route path="bookmarks" element={<Bookmarks />} />
           <Route path="new" element={<NewTopic />} />
           <Route path="*" element={<NotFound />} />
         </Route>

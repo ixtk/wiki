@@ -24,6 +24,21 @@ export const Topic = () => {
     }
   }
 
+  const bookmarkTopic = async () => {
+    const response = await fetch(`http://localhost:3000/entries/${topicId}`, {
+      method: "PATCH",
+      body: JSON.stringify({
+        bookmarked: !post.bookmarked
+      })
+    })
+
+    const json = await response.json()
+
+    if (response.ok) {
+      setPost({ ...post, bookmarked: json.bookmarked })
+    }
+  }
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -57,9 +72,14 @@ export const Topic = () => {
           {post.content}
         </Markdown>
       </div>
-      <button className="contrast delete-btn" onClick={deleteTopic}>
-        {clickCount === 0 ? "Delete" : "Confirm"}
-      </button>
+      <div className="topic-btns">
+        <button className="contrast delete-btn" onClick={deleteTopic}>
+          {clickCount === 0 ? "Delete" : "Confirm"}
+        </button>
+        <button onClick={bookmarkTopic} className="secondary">
+          {post.bookmarked ? "Remove bookmark" : "Bookmark"}
+        </button>
+      </div>
     </div>
   )
 }
