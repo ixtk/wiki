@@ -7,11 +7,26 @@
 
 .container {
   display: flex;
+  flex-direction: column;
   gap: 32px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
 
-form {
+.container > form {
   max-width: 300px;
+}
+
+.container > main {
+  flex: 1;
+}
+
+.delete-btn {
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    flex-direction: row;
+  }
 }
