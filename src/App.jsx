@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router"
+import { Routes, Route, Navigate } from "react-router"
 
 import { Home } from "./pages/Home"
 import { NewTopic } from "./pages/NewTopic"
@@ -14,11 +14,12 @@ function App() {
     <>
       <Routes>
         <Route element={<RootLayout />}>
-          <Route index element={<Home />} />
+          <Route index element={<Navigate to="/entries" />} />
+          <Route path="/entries" element={<Home />} />
           <Route path="/entries/:topicId" element={<Topic />} />
-          <Route path="search" element={<SearchResults />} />
+          <Route path="/entries/search" element={<SearchResults />} />
           <Route path="bookmarks" element={<Bookmarks />} />
-          <Route path="new" element={<NewTopic />} />
+          <Route path="/entries/new" element={<NewTopic />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

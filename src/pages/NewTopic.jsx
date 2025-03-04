@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router"
 
 export const NewTopic = () => {
@@ -7,6 +7,10 @@ export const NewTopic = () => {
     title: "",
     content: ""
   })
+
+  useEffect(() => {
+    document.title = "Create New | Wiki"
+  }, [])
 
   const addNewTopic = async (event) => {
     event.preventDefault()

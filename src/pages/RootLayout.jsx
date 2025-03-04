@@ -8,7 +8,7 @@ export const RootLayout = () => {
   const searchEntry = (event) => {
     event.preventDefault()
     setQuery("")
-    navigate(`/search?q=${query}`)
+    navigate(`/entries/search?q=${query}`)
   }
 
   return (
@@ -29,7 +29,7 @@ export const RootLayout = () => {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "contrast" : "")}
-                to="/"
+                to="/entries"
               >
                 Home
               </NavLink>
@@ -37,7 +37,7 @@ export const RootLayout = () => {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? "contrast" : "")}
-                to="/new"
+                to="/entries/new"
               >
                 Create new
               </NavLink>
