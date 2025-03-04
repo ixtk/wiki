@@ -27,13 +27,28 @@ export const RootLayout = () => {
         <nav>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "contrast" : "")}
+                to="/"
+              >
+                Home
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/new">Create new</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "contrast" : "")}
+                to="/new"
+              >
+                Create new
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/bookmarks">Bookmarks</NavLink>
+              <NavLink
+                className={({ isActive }) => (isActive ? "contrast" : "")}
+                to="/bookmarks"
+              >
+                Bookmarks
+              </NavLink>
             </li>
           </ul>
         </nav>

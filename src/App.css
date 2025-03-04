@@ -9,8 +9,8 @@
   display: flex;
   flex-direction: column;
   gap: 32px;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .container > form {
@@ -41,6 +41,14 @@ form.new-topic input[type="text"] {
   width: 100%;
 }
 
+html {
+  height: 100%;
+}
+
+body, #root, .container {
+  height: 100%;
+}
+
 @media screen and (min-width: 400px) {
   .topic-btns {
     flex-direction: row;
@@ -55,5 +63,10 @@ form.new-topic input[type="text"] {
 @media screen and (min-width: 800px) {
   .container {
     flex-direction: row;
+  }
+
+  aside {
+    border-right: 1px solid var(--pico-form-element-border-color);
+    padding-right: var(--pico-spacing);
   }
 }

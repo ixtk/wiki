@@ -7,8 +7,6 @@ export const SearchResults = () => {
   const [posts, setPosts] = useState([])
   const [loading, setLoading] = useState(true)
 
-  console.log(searchParams)
-
   useEffect(() => {
     document.title = `Search results | Wiki`
 

@@ -43,7 +43,13 @@ export const Topic = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(`http://localhost:3000/entries/${topicId}`)
+
+        if (!response.ok && response.status === 404) {
+          throw new Error(`Topic not found with id "${topicId}"`)
+        }
+
         const json = await response.json()
+
         setPost(json)
         document.title = `${json.title} | Wiki`
       } catch (error) {
@@ -57,7 +63,7 @@ export const Topic = () => {
   }, [topicId])
 
   if (error) {
-    return <p>Something went wrong: {error}</p>
+    return <p>{error}</p>
   }
 
   if (loading) {
